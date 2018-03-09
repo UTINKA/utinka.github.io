@@ -1,0 +1,234 @@
+html {
+    font-family: Product Sans,Roboto,sans-serif;
+}
+
+body{
+	opacity: 0;
+	background-color: #eee;
+	transition: 2.0s;
+}
+
+/* menu */
+
+.menu{
+	top: 0;
+    z-index: 99;
+	position: fixed;
+    background: #3F51B5;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.menu span{
+	margin-left: 15px;
+    user-select: none;
+    line-height: 55px;
+    font-size: 20px;
+    color: #ffffff;
+    padding-left: 5px;
+    transition: 0.5s;
+}
+
+
+.menu .menus:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu .menus:active{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* left menu */
+
+.leftmenu-owerlay{
+	opacity: 0;
+    display: none;
+    position: fixed;
+    z-index: 9998;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+	transition: 0.5s;
+}
+
+.leftmenu{
+	opacity: 0;
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    background-color: #ffffff;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	transition: 0.5s;
+}
+
+.leftmenu header{
+	background-color: #C62828;
+    height: 50px;
+}
+
+.leftmenu header i{
+	user-select: none;
+	line-height: 50px;
+    height: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #ffffff;
+	transition: 0.5s;
+}
+.leftmenu header i:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.leftmenu header i:active{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.leftmenu header i .ripl{
+	background-color:#C62828;
+}
+
+.leftmenu ul{
+	padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.leftmenu ul a{
+	user-select: none;
+	display: block;
+    padding: 10px;
+	color: #000000;
+	transition: 0.5s;
+}
+
+.leftmenu ul a:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.leftmenu ul a:active{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.leftmenu ul a .ripl{
+	background-color: #ababab;
+}
+
+
+/* help panel down */
+.helppaneldown{
+    z-index: 99;
+    bottom: 0;
+    position: fixed;
+    width: 90%;
+    height: 50px;
+    margin-left: 5%;
+    background-color: #ffffff;
+	transition: 0.6s;
+}
+
+/* ripple-color click */
+.helppaneldown .ripl{
+	background-color: #1976D2;
+}
+
+.helppaneldown header{
+	height: 50px;
+    background-color: #2196F3;
+}
+
+.helppaneldown header .icon{
+	width: 40%;
+    color: #000;
+}
+
+.helppaneldown header .icon i{
+	color: #ffffff;
+	user-select: none;
+    padding: 15px 0px 0px 15px;
+}
+
+/* block's */
+.blocks{
+	margin-top: 80px;
+}
+
+.block{
+	padding: 5px;
+	background-color: #ffffff;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 1px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.20);
+}
+
+.block .infoblock{
+	padding: 30px 30px 0px 30px;
+	text-align: center;
+}
+
+.block .infoblock span{
+	font-size: 25px;
+    color: #9E9E9E;
+}
+
+.block .content{
+	padding: 10px 30px 30px 30px;
+}
+
+
+.content .icon{
+	margin: 5px;
+    display: inline-block;
+    text-align: center;
+    width: 112px;
+    height: 120px;
+    border-radius: 2px;
+    transition: 0.5s;
+}
+
+.content .icon:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.content .icon:active{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.content .icon i{
+    user-select: none;
+    font-size: 40px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.content .icon .bottom{
+	user-select: none;
+	font-size: 12px;
+}
+/* ripple-color click */
+.content .icon .ripl{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* buttons */
+
+.content .sbutton{
+    padding: 10px;
+    width: 100%;
+}
+.content .sbutton span{
+	float: left;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+.content .sbutton .name{
+	float:right;
+	padding: 10px;
+}
+
+.inlineb{
+	display:inline-block;
+}
+
