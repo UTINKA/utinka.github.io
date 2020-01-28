@@ -1,54 +1,48 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="UTF-8" />
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<link rel="stylesheet" href="css/font.css" type="text/css" />
-	<link rel="stylesheet" href="css/icons.css" type="text/css" />
-	<link rel="stylesheet" href="css/clear-all.css" type="text/css" />
 
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	
 	<title>UTINKA</title>
-	<!-- JS -->
+	
+	<link rel="shortcut icon" href="icon.png">
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+
 	<script type="text/javascript" src="js/jquery.js"></script> 
-	<script type="text/javascript">
-	window.onload = function() 
-	{
-		document.body.style.opacity = '1';
-	};
-	</script>
 </head>
 	<body>
-		<div class="menu">
-			<span>Utinka</span>
-			<right>
-				<a href="https://github.com/UTINKA" target="_blank">GitHub</a>
-			</right>
+		<div class="loader" state="true">
+			<div class="bg"></div>
+			<label>UTINKA</label>
 		</div>
-		<!-- blocks -->
-		<div class="blocks">
-			<div class="block">
-				<div class="infoblock">
-					<span>My Projects</span><br/><br/><br/>
+		<div class="site">
+			<div class="menu" state="false">
+			
+				<div class="blackbg" state="false"></div>
+				<div class="mbutton">
+					<a>
+						<i class="material-icons">menu</i>
+					</a>
+				</div>
+				<label class="min_logo">UTINKA</label>
+				<div class="logo">UTINKA</div>
+				<div class="mlist">
+					<a page="history">История</a>
+					<a page="csharp">C#</a>
+					<!--a page="javascript">JavaScript</a>
+					<a page="htmlcssjs">Html / Css / Js</a-->
+				</div>
+				<div class="social">
+					<a target="_blank" href="https://vk.com/artemkautinka"><img src="resource/images/vk.png"></a>
+					<a target="_blank" href="https://www.instagram.com/artemkautinka/" ><img src="resource/images/inst.png"></a>
+					<a target="_blank" href="https://github.com/UTINKA" ><img src="resource/images/git.png"></a>
 				</div>
 			</div>
-			<div class="block">
-				<a href="https://utinka.github.io/materialdesignlib.github.io/" target="_blank">
-					<img src="img/mdl.jpg"/>
-					<label>Material Design Library</label>
-				</a>
-				<a href="https://github.com/UTINKA/audioplayer" target="_blank">
-					<img src="img/ap.jpg"/>
-					<label>Audio Player</label>
-				</a>
-				<a href="https://utinka.github.io/android.github.io/" target="_blank">
-					<img src="img/android.jpg"/>
-					<label>Android (html,css,js)</label>
-				</a>
+			<div class="content_page" statebl="false">
+			
 			</div>
 		</div>
-		<br/><br/><br/>
-	</body> 
+	</body>	
+	<script type="text/javascript" src="js/index.js"></script>
 </html>
