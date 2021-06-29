@@ -7,41 +7,32 @@
 	<title>UTINKA</title>
 	
 	<link rel="shortcut icon" href="icon.png">
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
-
+	<link rel="stylesheet" href="css/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="css/mdesign.css" type="text/css" />
+	<link rel="stylesheet" href="css/styles.css" type="text/css" />
+	<link rel="stylesheet" href="css/styles_history.css" type="text/css" />
+	
 	<script type="text/javascript" src="js/jquery.js"></script> 
 </head>
 	<body>
-		<div class="loader" state="true">
-			<div class="bg"></div>
-			<label>UTINKA</label>
-		</div>
-		<div class="site">
-			<div class="menu" state="false">
-			
-				<div class="blackbg" state="false"></div>
-				<div class="mbutton">
-					<a>
-						<i class="material-icons">menu</i>
+		<div class="menu" state="showed">
+			<div class="box">
+				<div class="logo"></div>
+				<div class="links">
+					<a class="link" page="history" act="true">История</a>
+					<a class="link_drop" act="false">Проекты
+						<ul>
+							<li page="csharp" act="false">C#</li>
+							<li page="javascript" act="false">JavaScript</li>
+						</ul>
 					</a>
-				</div>
-				<label class="min_logo">UTINKA</label>
-				<div class="logo">UTINKA</div>
-				<div class="mlist">
-					<a page="history">История</a>
-					<a page="csharp">C#</a>
-					<!--a page="javascript">JavaScript</a>
-					<a page="htmlcssjs">Html / Css / Js</a-->
-				</div>
-				<div class="social">
-					<a target="_blank" href="https://vk.com/artemkautinka"><img src="resource/images/vk.png"></a>
-					<a target="_blank" href="https://www.instagram.com/artemkautinka/" ><img src="resource/images/inst.png"></a>
-					<a target="_blank" href="https://github.com/UTINKA" ><img src="resource/images/git.png"></a>
+					
+					<!--a class="link r" page="help" act="false">Кто я ?</a-->
 				</div>
 			</div>
-			<div class="content_page" statebl="false">
+		</div>
+		<div class="content">
 			
-			</div>
 		</div>
 	</body>	
 	<script type="text/javascript" src="js/index.js"></script>

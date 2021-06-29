@@ -1,185 +1,106 @@
 var 
-	MainContent = $('.site .content_page'),
-	MainMenu = $('.site .menu')
+	MainMenu = $('.menu'),
+	user_scroll_current = 0,
+	Links = $('.menu .box .links'),
+	Content = $('.content'),
+	CurrentPage = 'history'
 ;
 
 (function($) 
 {
 	$(document).ready(function() 
 	{
-		GoLink('history');
-		MainMenu.find('.mlist').find('a').each(function(e)
-		{
-			ConnectMenuLinks($(this));
-		});
-		
-		MainMenu.find('.blackbg').click(function(e)
-		{
-			var mVal = MainMenu.attr('state');
-			if(mVal == 'true')
-			{
-				MainMenu.attr('state','false');
-				MainContent.attr('statebl','false');
-				MainMenu.find('.mbutton a').find('i').text('menu');
-			}
-		});
-		MainMenu.find('.mbutton a').click(function(e)
-		{
-			var obj = $(this);
-			var mVal = MainMenu.attr('state');
-			if(mVal == 'false')
-			{
-				MainMenu.attr('state','true');
-				MainContent.attr('statebl','true');
-				obj.find('i').text('keyboard_arrow_left');
-			}
-			else if(mVal == 'true')
-			{
-				MainMenu.attr('state','false');
-				MainContent.attr('statebl','false');
-				obj.find('i').text('menu');
-			}
-		});
-		
-		setTimeout(function()
-		{
-			$('body .loader').attr('state','false');
-		},1000);
+		SearhLinks();
+		GoPage(CurrentPage, 100, 300);
 	});
 	
 	$(window).resize(function() 
 	{
-		var mVal = MainMenu.attr('state');
-		if(mVal == 'true')
-		{
-			MainMenu.attr('state','false');
-			MainContent.attr('statebl','false');
-			MainMenu.find('.mbutton a').find('i').text('menu');
-		}
+		
 	});
 	
 	$(window).scroll(function()
-	{	
-		/*var top = $(this).scrollTop();
-		var body_top = $('.header').offset().top-$('.header').height();
-		if(body_top > -40) 
+	{
+		var Top = $(this).scrollTop();
+		if(Top > 150)
 		{
-			$('.menu').attr('state','active');
+			if(user_scroll_current > Top)
+			{
+				if(MainMenu.attr('state') == 'hided')
+				{
+					MainMenu.attr('state','showed');
+				}
+			}
+			else if(Top > user_scroll_current - 10) 
+			{
+				if(MainMenu.attr('state') == 'showed')
+				{
+					MainMenu.attr('state','hided');;
+				}
+			}
 		}
-		if(body_top < -40) 
-		{
-			$('.menu').attr('state','');
-		}*/
+		user_scroll_current = Top;
 	});
 	
 })(jQuery);
 
-function ConnectClickMore(obj)
+
+function GoPage(link, timeS = 500, timeO = 500)
 {
-	var post = obj;
-	// enter
-	post.find('.image .more').click(function(e)
-	{
-		var state = post.find('.info').attr('show');
-
-		if(state == null || state == 'false')
-		{
-			post.find('.up').css('opacity','0');
-			post.find('.image .developers').css('opacity','0');
-			post.find('.image .more').css('opacity','0');
-			post.find('.image img').css('filter','blur(10px)');
-			//
-			post.find('.info').css({
-				'z-index':'6',
-				'top':'0'
-			})
-			post.find('.info').attr('show','true');
-		}
-		else if(state == 'true')
-		{
-			post.find('.up').css('opacity','1');
-			post.find('.image .developers').css('opacity','1');
-			post.find('.image .more').css('opacity','1');
-			post.find('.image img').css('filter','blur(0px)');
-			//
-			post.find('.info').css({
-				'z-index':'0',
-				'top':'100%'
-			})
-			post.find('.info').attr('show','false');
-		}
-	});
-	// exit
-	post.find('.info .i_menu a').click(function(e)
-	{
-		var state = post.find('.info').attr('show');
-
-		if(state == null || state == 'false')
-		{
-			post.find('.up').css('opacity','0');
-			post.find('.image .developers').css('opacity','0');
-			post.find('.image .more').css('opacity','0');
-			post.find('.image img').css('filter','blur(10px)');
-			//
-			post.find('.info').css({
-				'z-index':'6',
-				'top':'0'
-			})
-			post.find('.info').attr('show','true');
-		}
-		else if(state == 'true')
-		{
-			post.find('.up').css('opacity','1');
-			post.find('.image .developers').css('opacity','1');
-			post.find('.image .more').css('opacity','1');
-			post.find('.image img').css('filter','blur(0px)');
-			//
-			post.find('.info').css({
-				'z-index':'0',
-				'top':'100%'
-			})
-			post.find('.info').attr('show','false');
-		}
-	});
-}
-
-function GoLink(link)
-{
+	CurrentPage = link;
+	Update();
 	$.ajax(
 	{
 		url: '/pages/' + link + '.html',
 		cache: false,
 		success: function(data) 
 		{
-			MainContent.html(data);
-			var mVal = MainMenu.attr('state');
-			if(mVal == 'true')
+			Content.css('opacity','0');
+			setTimeout(function()
 			{
-				MainMenu.attr('state','false');
-				MainContent.attr('statebl','false');
-				MainMenu.find('.mbutton a').find('i').text('menu');
-			}
-			if($('html, body').scrollTop() != 0)
-			{
-				$('html, body').animate(
+				Content.html(data);
+				setTimeout(function()
 				{
-					scrollTop: 0
-				}, 500);
-			}
-			$('.site .content_page .content .post').each(function(e)
-			{
-				var obj = $(this);
-				ConnectClickMore(obj);
-			});
+					Content.css('opacity','1');
+				}, timeS);
+			}, timeO);
 		}
 	});
 }
 
-function ConnectMenuLinks(obj)
+function AddLink(obj)
 {
 	obj.click(function(e)
 	{
-		var page = obj.attr('page');
-		GoLink(page);
+		var page = $(this).attr('page');
+		GoPage(page);
 	});
 }
+
+function SearhLinks()
+{
+	Links.find('.link').each(function(e)
+	{
+		AddLink($(this));
+	});
+	
+	Links.find('li').each(function(e)
+	{
+		AddLink($(this));
+	});
+}
+
+function Update()
+{
+	Links.find('a , li').each(function(e)
+	{
+		var obj = $(this);
+		if(obj.attr('page') == CurrentPage)
+		{
+			obj.attr('act','true');
+			document.title = 'UTINKA - ' + obj.text();
+		}
+		else obj.attr('act','false');
+	});
+}
+

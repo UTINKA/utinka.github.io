@@ -1,0 +1,22 @@
+@font-face {
+	font-family: 'Product Sans';
+	src: url('../fonts/ProductSans-Regular/ProductSans-Regular.eot');
+	src: local('Product Sans'), local('ProductSans-Regular'),
+		url('../fonts/ProductSans-Regular/ProductSans-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ProductSans-Regular/ProductSans-Regular.woff') format('woff'),
+		url('../fonts/ProductSans-Regular/ProductSans-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Regular/MaterialIcons-Regular.eot);
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(../fonts/MaterialIcons-Regular/MaterialIcons-Regular.woff2) format('woff2'),
+       url(../fonts/MaterialIcons-Regular/MaterialIcons-Regular.woff) format('woff'),
+       url(../fonts/MaterialIcons-Regular/MaterialIcons-Regular.ttf) format('truetype');
+}

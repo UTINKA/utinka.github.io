@@ -1,0 +1,157 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+html, body{
+	font-family: Product Sans;
+	-webkit-font-smoothing: subpixel-antialiased
+}
+a{
+	outline: 0;
+    border: 0;
+}
+
+.menu{
+	display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 10%);
+	z-index: 99;
+	transition: 0.3s; 
+}
+
+.menu[state=showed]{
+	top: 0px;
+}
+.menu[state=hided]{
+	top: -60px;
+	box-shadow: 0px 10px 50px 20px rgb(0 0 0 / 10%);
+}
+
+.menu .box{
+	width: calc(100% / 2 + 200px);
+    height: 100%;
+    margin: 0 auto;
+	position: relative;
+}
+.menu .box .logo{
+	position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 150px;
+    height: 60px;
+    background-image: url(../resource/images/utinkaLogo.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.menu .box .links{
+	width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+.menu .box .links .link[page=history],
+.menu .box .links .link_drop[page=history]{
+	margin-left: 0;
+}
+.menu .box .links .link,
+.menu .box .links .link_drop{
+	display: inline-block;
+    height: calc(60px - 42px);
+    padding: 21px;
+	cursor: pointer;
+    user-select: none;
+    color: #808080;
+	margin-left: -3.5px;
+	pointer-events: auto;
+	transition: 0.3s;
+}
+
+.menu .box .links .link[act=true],
+.menu .box .links .link_drop[act=true],
+.menu .box .links .link_drop ul li[act=true]{
+	background: #ffcdd2;
+    color: #fff;
+	cursor: default;
+	pointer-events: none;
+}
+
+.menu .box .links .link[act=false]:hover,
+.menu .box .links .link_drop[act=false]:hover{
+    background: #f44336;
+    color: #fff;
+}
+
+.menu .box .links .r{
+	float: right;
+}
+
+.menu .box .links .link_drop{
+	position: initial;
+}
+
+.menu .box .links .link_drop:hover ul{
+	top: 60px;
+	opacity: 1;
+	pointer-events: auto;
+	margin-top: 0px;
+}
+
+.menu .box .links .link_drop ul {
+	list-style: none;
+    display: block;
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 10%);
+    top: 60px;
+	margin-left: -21px;
+	margin-top: 30px;
+	pointer-events: none;
+    text-align: center;
+	cursor: default;
+	transition:0.3s;
+	opacity: 0;
+}
+
+.menu .box .links .link_drop ul li{
+	display: block;
+    height: calc(60px - 42px);
+    padding: 21px;
+    cursor: pointer;
+    user-select: none;
+    color: #808080;
+    transition: 0.3s;
+}
+
+.menu .box .links .link_drop ul li:hover {
+	background: #f44336;
+    color: #fff;
+}
+
+.content{
+	position: relative;
+    top: 100px;
+    width: calc(100% / 2 + 200px);
+    height: auto;
+    margin: 0 auto;
+	transition:0.3s;
+}
+
+.content .Title{
+    margin-top: 100px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f44336;
+}
+
+
+
+
