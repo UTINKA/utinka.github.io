@@ -13,6 +13,7 @@ a{
 }
 
 .menu{
+	user-select: none;
 	display: block;
     position: fixed;
     top: 0;
