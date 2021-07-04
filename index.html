@@ -16,23 +16,33 @@
 </head>
 	<body>
 		<div class="menu" state="showed">
-			<div class="box">
+			<div class="box" mob="false">
 				<div class="logo"></div>
 				<div class="links">
 					<a class="link" page="history" act="true">История</a>
 					<a class="link_drop" act="false">Проекты
 						<ul>
 							<li page="csharp" act="false">C#</li>
+							<li page="html" act="false">HTML</li>
+							<li page="css" act="false">CSS</li>
 							<li page="javascript" act="false">JavaScript</li>
+							<li page="php" act="false">PHP</li>
 						</ul>
 					</a>
 					
-					<!--a class="link r" page="help" act="false">Кто я ?</a-->
+					<a class="link r" page="help" act="false">Кто я ?</a>
 				</div>
 			</div>
+			<div class="mobile">
+				<a class="mbutton"><i class="material-icons">menu</i></a>
+			</div>
 		</div>
+		<div class="blurBox" state="false"></div>
 		<div class="content">
 			
+		</div>
+		<div class="goUp">
+			<i class="material-icons">keyboard_arrow_up</i>
 		</div>
 	</body>	
 	<script type="text/javascript" src="js/index.js"></script>

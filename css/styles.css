@@ -34,11 +34,42 @@ a{
 	box-shadow: 0px 10px 50px 20px rgb(0 0 0 / 10%);
 }
 
+.menu .mobile{
+	position: absolute;
+    top: -70px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: calc(100% / 2 + 181px);
+    margin: 0 auto;
+    transition: 0.3s;
+}
+.menu .mobile .mbutton{
+	display: block;
+	color: #808080;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    text-align: center;
+	margin-left: 0px;
+	transition: 0.3s;
+}
+.menu .mobile .mbutton:hover{
+	background: #f44336;
+    color: #ffffff;
+}
+.menu .mobile .mbutton i{
+	padding: 18px;
+}
+
+
 .menu .box{
+	top: 0px;
 	width: calc(100% / 2 + 200px);
-    height: 100%;
+    height: 60px;
     margin: 0 auto;
 	position: relative;
+	transition: 0.3s;
 }
 .menu .box .logo{
 	position: absolute;
@@ -136,6 +167,25 @@ a{
     color: #fff;
 }
 
+.blurBox{
+	pointer-events: none;
+    opacity: 0;
+	position: fixed;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: rgb(0 0 0 / 50%);
+    z-index: 80;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.blurBox[state=true]{
+	pointer-events: auto;
+    opacity: 1;
+}
+
 .content{
 	position: relative;
     top: 100px;
@@ -150,6 +200,84 @@ a{
     font-size: 40px;
     font-weight: bold;
     color: #f44336;
+}
+
+.goUp{
+	position: fixed;
+    bottom: -80px;
+    left: unset;
+    right: 60px;
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    background: #f44336;
+    color: #fff;
+    box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 30%);
+    border-radius: 100px;
+    text-align: center;
+    z-index: 70;
+    user-select: none;
+    cursor: pointer;
+	opacity: 0;
+    transform: scale(0);
+	transition: 0.3s;
+}
+.goUp i{
+	padding: 18px;
+}
+
+
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+	.menu .box[mob=false]{
+		position: fixed;
+		top: 0;
+		left: calc(-110% / 2);
+		width: calc(100% / 2);
+		height: 100vh;
+		background: #fff;
+		box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 10%);
+		z-index: 99;
+		transition: 0.3s;
+	}
+	.menu .box[mob=true]{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: calc(100% / 2);
+		height: 100vh;
+		background: #fff;
+		box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 10%);
+		z-index: 99;
+		transition: 0.3s;
+	}
+	.menu .box .links{
+		margin-top: 60px;
+	}
+	.menu .box .links .r{
+		float: unset;
+	}
+	.menu .box .links .link, .menu .box .links .link_drop{
+		display: block;
+	}
+	.menu .box .links .link_drop ul{
+		top: calc(60px * 3);
+		left: calc(100% / 2);
+	}
+	.menu .box .links .link_drop:hover ul{
+		top: calc(60px * 2);
+	}
+	.menu .mobile{
+		top: 0;
+	}
+	
+	.content .Title{
+		text-align: center;
+	}
+	
+	.goUp{
+		left: 0;
+		right: 0;
+	}
 }
 
 

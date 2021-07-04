@@ -3,7 +3,8 @@ var
 	user_scroll_current = 0,
 	Links = $('.menu .box .links'),
 	Content = $('.content'),
-	CurrentPage = 'history'
+	CurrentPage = 'history',
+	MobileMenuState = false
 ;
 
 (function($) 
@@ -12,16 +13,57 @@ var
 	{
 		SearhLinks();
 		GoPage(CurrentPage, 100, 300);
+		
+		$('.menu .mobile .mbutton').click(function(e)
+		{
+			MobileMenu();
+		});
+		$('.blurBox').click(function(e)
+		{
+			if(MobileMenuState == true)
+			{
+				MobileMenu();
+			}
+		});
+		$('.goUp').click(function(e)
+		{
+			if($('html, body').scrollTop() != 0)
+			{
+				$('html, body').animate(
+				{
+					scrollTop: 0
+				}, 500);
+			}
+		});
 	});
 	
 	$(window).resize(function() 
 	{
-		
+		if(MobileMenuState == true)
+		{
+			MobileMenu();
+		}
 	});
 	
 	$(window).scroll(function()
 	{
 		var Top = $(this).scrollTop();
+		if(Top > 300)
+		{
+			$('.goUp').css({
+				'bottom':'60px',
+				'opacity': '1',
+				'transform': 'scale(1)'
+			});
+		}
+		if(Top < 300)
+		{
+			$('.goUp').css({
+				'bottom':'-80px',
+				'opacity': '0',
+				'transform': 'scale(0)'
+			});
+		}
 		if(Top > 150)
 		{
 			if(user_scroll_current > Top)
@@ -56,6 +98,17 @@ function GoPage(link, timeS = 500, timeO = 500)
 		success: function(data) 
 		{
 			Content.css('opacity','0');
+			if($('html, body').scrollTop() != 0)
+			{
+				$('html, body').animate(
+				{
+					scrollTop: 0
+				}, 500);
+			}
+			if(MobileMenuState == true)
+			{
+				MobileMenu();
+			}
 			setTimeout(function()
 			{
 				Content.html(data);
@@ -102,5 +155,27 @@ function Update()
 		}
 		else obj.attr('act','false');
 	});
+}
+
+function MobileMenu()
+{
+	if(MobileMenuState == true)
+	{
+		$('.menu .mobile .mbutton i').text('menu');
+		$('.menu .mobile .mbutton').css('margin-left','0px');
+		$('.menu .box').attr('mob','false');
+		$('.blurBox').attr('state','false');
+		$('html, body').css('overflow','unset');
+		MobileMenuState = false;
+	}
+	else
+	{
+		$('.menu .mobile .mbutton i').text('close');
+		$('.menu .mobile .mbutton').css('margin-left','calc(100% - 60px)');
+		$('.menu .box').attr('mob','true');
+		$('.blurBox').attr('state','true');
+		$('html, body').css('overflow','hidden');
+		MobileMenuState = true;
+	}
 }
 
