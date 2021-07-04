@@ -2,7 +2,7 @@ if ('serviceWorker' in navigator)
 {
 	window.addEventListener('load', function() 
 	{
-		navigator.serviceWorker.register('js/service-worker.js').then(function(registration) 
+		navigator.serviceWorker.register('./js/service-worker.js', { scope: '/' }).then(function(registration) 
 		{
 			//console.log('ServiceWorker registration successful with scope: ', registration.scope);
 		}, 
@@ -16,6 +16,8 @@ if ('serviceWorker' in navigator)
 	});
 } 
 
+
+
 var doCache = true;
 var CACHE_NAME = 'UTINKA_PWA';
 
@@ -27,7 +29,7 @@ self.addEventListener('activate', event =>
    {
 		if(!cacheWhitelist.includes(key))
 		{
-			console.log('Deleting cache: ' + key)
+			//console.log('Deleting cache: ' + key)
 			return caches.delete(key);
 		}
 	}))));
@@ -44,13 +46,38 @@ self.addEventListener('install', function(event)
 				response.json()
 			}).then(assets => 
 			{
-				const urlsToCache = ['/']
+				const urlsToCache = [
+				'/',
+				'/css/styles.css',
+				'/css/fonts.css',
+				'/css/mdesign.css',
+				'/css/styles_history.css',
+				
+				
+				'/fonts/ProductSans-Regular/ProductSans-Regular.woff',
+				'/fonts/MaterialIcons-Regular/MaterialIcons-Regular.woff2',
+				
+				'/resource/images/utinkaLogo.png',
+				
+				'/js/jquery.js',
+				'/js/index.js',
+				'/js/pages.js',
+				
+				'/pages/history.html',
+				'/pages/csharp.html',
+				'/pages/html.html',
+				'/pages/css.html',
+				'/pages/javascript.html',
+				'/pages/php.html',
+				'/pages/help.html',
+				];
 				cache.addAll(urlsToCache)
-				console.log('cached');
+				//console.log('cached');
 			})
 		}));
 	}
 });
+
 
 self.addEventListener('fetch', function(event)
 {
@@ -62,3 +89,4 @@ self.addEventListener('fetch', function(event)
 		}));
 	}
 });
+
