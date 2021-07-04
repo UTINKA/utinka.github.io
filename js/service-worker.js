@@ -2,7 +2,7 @@ if ('serviceWorker' in navigator)
 {
 	window.addEventListener('load', function() 
 	{
-		navigator.serviceWorker.register('/system/js/service-worker.js').then(function(registration) 
+		navigator.serviceWorker.register('js/service-worker.js').then(function(registration) 
 		{
 			//console.log('ServiceWorker registration successful with scope: ', registration.scope);
 		}, 
@@ -44,7 +44,6 @@ self.addEventListener('install', function(event)
 				response.json()
 			}).then(assets => 
 			{
-				// Открываем и кэшируем нужные страницы и файлы
 				const urlsToCache = ['/']
 				cache.addAll(urlsToCache)
 				console.log('cached');
@@ -53,7 +52,6 @@ self.addEventListener('install', function(event)
 	}
 });
 
-// Когда приложение запущено, сервис-воркер перехватывает запросы и отвечает на них данными из кэша, если они есть
 self.addEventListener('fetch', function(event)
 {
 	if(doCache)
