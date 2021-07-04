@@ -165,7 +165,6 @@ function MobileMenu()
 		$('.menu .mobile .mbutton').css('margin-left','0px');
 		$('.menu .box').attr('mob','false');
 		$('.blurBox').attr('state','false');
-		$('html, body').css('overflow','unset');
 		MobileMenuState = false;
 	}
 	else
@@ -174,7 +173,6 @@ function MobileMenu()
 		$('.menu .mobile .mbutton').css('margin-left','calc(100% - 60px)');
 		$('.menu .box').attr('mob','true');
 		$('.blurBox').attr('state','true');
-		$('html, body').css('overflow','hidden');
 		MobileMenuState = true;
 	}
 }
