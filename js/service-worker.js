@@ -46,31 +46,7 @@ self.addEventListener('install', function(event)
 				response.json()
 			}).then(assets => 
 			{
-				const urlsToCache = [
-				'/',
-				'/css/styles.css',
-				'/css/fonts.css',
-				'/css/mdesign.css',
-				'/css/styles_history.css',
-				
-				
-				'/fonts/ProductSans-Regular/ProductSans-Regular.woff',
-				'/fonts/MaterialIcons-Regular/MaterialIcons-Regular.woff2',
-				
-				'/resource/images/utinkaLogo.png',
-				
-				'/js/jquery.js',
-				'/js/index.js',
-				'/js/pages.js',
-				
-				'/pages/history.html',
-				'/pages/csharp.html',
-				'/pages/html.html',
-				'/pages/css.html',
-				'/pages/javascript.html',
-				'/pages/php.html',
-				'/pages/help.html',
-				];
+				const urlsToCache = ['/'];
 				cache.addAll(urlsToCache)
 				//console.log('cached');
 			})
