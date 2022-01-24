@@ -11,6 +11,32 @@ var
 {
 	$(document).ready(function() 
 	{
+		if(getMem('Theme') != '')
+		{
+			var obj = $('.menu .box .links .themes');
+			if(obj.attr('set') == 'white')
+			{
+				if(getMem('Theme') == 'b')
+				{
+					obj.attr('set','black');
+					obj.find('.set .w').attr('act','nset');
+					obj.find('.set .b').attr('act','set');
+					$('html').attr('theme','black');
+					setMem('Theme', 'b');
+				}
+			}
+			else
+			{
+				if(getMem('Theme') == 'w')
+				{
+					obj.attr('set','white');
+					obj.find('.set .w').attr('act','set');
+					obj.find('.set .b').attr('act','nset');
+					$('html').attr('theme','white');
+					setMem('Theme', 'w');
+				}
+			}
+		}
 		SearhLinks();
 		GoPage(CurrentPage, 100, 300);
 		
@@ -33,6 +59,26 @@ var
 				{
 					scrollTop: 0
 				}, 500);
+			}
+		});
+		$('.menu .box .links .themes').click(function(e)
+		{
+			var obj = $(this);
+			if(obj.attr('set') == 'white')
+			{
+				obj.attr('set','black');
+				obj.find('.set .w').attr('act','nset');
+				obj.find('.set .b').attr('act','set');
+				$('html').attr('theme','black');
+				setMem('Theme', 'b');
+			}
+			else
+			{
+				obj.attr('set','white');
+				obj.find('.set .w').attr('act','set');
+				obj.find('.set .b').attr('act','nset');
+				$('html').attr('theme','white');
+				setMem('Theme', 'w');
 			}
 		});
 	});
@@ -63,6 +109,18 @@ var
 				'opacity': '0',
 				'transform': 'scale(0)'
 			});
+		}
+		if(CurrentPage == 'music')
+		{
+			Content.find('.music_page .header .scroll').css('height', (350 - Top) + 'px');
+			if(Top < 150)
+			{
+				Content.find('.music_page .header .Title').css('top', (Top) + 'px');
+			}
+			else if(Top > 150)
+			{
+				Content.find('.music_page .header .Title').css('top', '150px');
+			}
 		}
 		if(Top > 150)
 		{
@@ -177,5 +235,20 @@ function MobileMenu()
 		$('html, body').css('overflow','hidden');
 		MobileMenuState = true;
 	}
+}
+
+
+function getMem(key)
+{
+	var memory = localStorage.getItem(key);
+	if(memory != null && memory != 'null' && memory.length != 0) 
+	{
+		return memory;
+	}
+	else return false;
+}
+function setMem(key, value)
+{
+	return localStorage.setItem(key, value);
 }
 

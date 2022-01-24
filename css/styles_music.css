@@ -1,0 +1,114 @@
+.content .music_page .header{
+	height: 350px;
+    overflow: hidden;
+}
+.content .music_page .header .scroll{
+	height: 350px;
+    overflow: hidden;
+}
+.content .music_page .header .img{
+	background: url(../resource/images/music/header.png);
+    width: 100%;
+    height: 350px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content .music_page .header .Title .mBoxText{
+	background: #f44336;
+    color: #fff;
+    margin: 0;
+    padding: 9px 0 0 0;
+    text-align: center;
+}
+
+.content .music_page .header .Title .mBoxText text{
+	padding: 10px;
+}
+.content .music_page .all_links{
+	text-align: center;
+}
+.content .music_page .all_links a{
+	width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 5px;
+    overflow: hidden;
+    filter: grayscale(1);
+	margin: 5px;
+    transition: 0.3s;
+}
+.content .music_page .all_links a:hover{
+	filter: grayscale(0);
+}
+.content .music_page .all_links a img{
+	height: 50px;
+}
+
+
+.content .music_page .music{
+	margin: 0 auto;
+    width: calc(100% / 2 + 200px);
+    padding: 50px 0;
+}
+.content .music_page .music hr{
+	margin: 25px;
+    border: solid 2px var(--post);
+    border-radius: 50px;
+	transition: 0.3s;
+}
+.content .music_page .music .album{
+	
+}
+.content .music_page .music .album .alb_label{
+	padding: 15px;
+    text-align: center;
+    color: var(--post_text);
+    font-size: 20px;
+    font-weight: bold;
+	transition: 0.3s;
+}
+
+.content .music_page .music .audio{
+	background: var(--body);
+    border-radius: 10px;
+    position: relative;
+    height: 75px;
+	border: solid 2px var(--post);
+	margin-bottom: 15px;
+	transition: 0.3s;
+}
+.content .music_page .music .audio:hover{
+	box-shadow: 0 5px 20px 2px var(--mus_audio_sd);
+	border: solid 2px rgb(0 0 0 / 0%);
+}
+.content .music_page .music .audio img{
+	width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    position: absolute;
+    top: calc(75px / 6.5);
+    left: 10px;
+    bottom: calc(75px / 6.5);
+}
+
+.content .music_page .music .audio label{
+	position: absolute;
+    top: calc(75px / 2.5);
+    left: 75px;
+	color: var(--post_text);
+	transition: 0.3s;
+}
+
+.content .music_page .music .audio text,
+.content .music_page .music .audio p{
+	color: var(--post_text);
+	display: inline-block;
+	transition: 0.3s;
+}
+
+.content .music_page .music .audio text{
+	color: #f44336;
+	font-weight: bold;
+}

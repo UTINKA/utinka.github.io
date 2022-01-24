@@ -1,0 +1,30 @@
+html[theme=white]{
+	--body: #ffffff;
+    --menu: #ffffff;
+	--link_act: #ffcdd2;
+	
+	--post: #f1f1f1;
+	--post_text: #3a3a3a;
+	--post_title_bottom: rgb(255 255 255 / 80%);
+	--post_info: #f8f8f8;
+	
+	--mus_audio_sd: rgb(0 0 0 / 20%);
+}
+html[theme=black] .menu .box .logo{
+	filter: invert(1);
+}
+
+
+
+html[theme=black] {
+	--body: #1f1f1f;
+    --menu: #171717;
+	--link_act: #b71c1c;
+	
+	--post: #3a3a3a;
+	--post_text: #ffffff;
+	--post_title_bottom: rgb(45 45 45 / 80%);
+	--post_info: #3a3a3a;
+	
+	--mus_audio_sd: rgb(0 0 0 / 50%);
+}

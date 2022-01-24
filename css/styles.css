@@ -5,7 +5,12 @@
 }
 html, body{
 	font-family: Product Sans;
-	-webkit-font-smoothing: subpixel-antialiased
+	-webkit-font-smoothing: subpixel-antialiased;
+	background: var(--body);
+	padding: 0;
+    margin: 0;
+    padding-bottom: 150px;
+	transition: 0.3s;
 }
 a{
 	outline: 0;
@@ -19,7 +24,7 @@ a{
     top: 0;
     left: 0;
     right: 0;
-    background: #fff;
+    background: var(--menu);
     height: 60px;
     width: 100%;
     box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 10%);
@@ -83,6 +88,7 @@ a{
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+	transition: 0.3s;
 }
 
 .menu .box .links{
@@ -110,7 +116,7 @@ a{
 .menu .box .links .link[act=true],
 .menu .box .links .link_drop[act=true],
 .menu .box .links .link_drop ul li[act=true]{
-	background: #ffcdd2;
+	background: var(--link_act);
     color: #fff;
 	cursor: default;
 	pointer-events: none;
@@ -141,7 +147,7 @@ a{
 	list-style: none;
     display: block;
     position: absolute;
-    background: #ffffff;
+    background: var(--menu);
     box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 10%);
     top: 60px;
 	margin-left: -21px;
@@ -164,6 +170,37 @@ a{
 }
 
 .menu .box .links .link_drop ul li:hover {
+	background: #f44336;
+    color: #fff;
+}
+
+.menu .box .links .themes{
+	float: right;
+    display: inline-block;
+	width: 60px;
+    height: 100%;	
+	user-select: none;
+    cursor: pointer;
+}
+.menu .box .links .themes .set{
+	color: #808080;
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+.menu .box .links .themes .set i{
+	padding: 18px;
+	position: absolute;
+    transform: scale(1);
+	transition: 0.3s;
+}
+.menu .box .links .themes .set i[act=set]{
+    transform: scale(1);
+}
+.menu .box .links .themes .set i[act=nset]{
+    transform: scale(0);
+}
+.menu .box .links .themes .set:hover{
 	background: #f44336;
     color: #fff;
 }
@@ -228,14 +265,14 @@ a{
 }
 
 
-@media only screen and (min-width : 320px) and (max-width : 480px) {
+@media only screen and (min-width : 0px) and (max-width : 1070px) {
 	.menu .box[mob=false]{
 		position: fixed;
 		top: 0;
 		left: calc(-110% / 2);
 		width: calc(100% / 2);
 		height: 100%;
-		background: #fff;
+		background: var(--menu);
 		box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 10%);
 		z-index: 99;
 		transition: 0.3s;
@@ -246,7 +283,7 @@ a{
 		left: 0;
 		width: calc(100% / 2);
 		height: 100vh;
-		background: #fff;
+		background: var(--menu);
 		box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 10%);
 		z-index: 99;
 		transition: 0.3s;
@@ -269,6 +306,12 @@ a{
 	}
 	.menu .mobile{
 		top: 0;
+	}
+	.menu .box .links .themes{
+		width: 100%;
+		height: 60px;
+		position: absolute;
+		bottom: 0;
 	}
 	
 	.content .Title{
