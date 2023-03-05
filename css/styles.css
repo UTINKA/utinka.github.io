@@ -235,7 +235,7 @@ a{
 	position: relative;
     top: 100px;
     width: calc(100% / 2 + 200px);
-    height: auto;
+    height: 110vh;
     margin: 0 auto;
 	transition:0.3s;
 }
