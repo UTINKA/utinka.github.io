@@ -91,6 +91,8 @@ var
 		}
 	});
 	
+	
+	var Music_page_headerBlur = 0.1;
 	$(window).scroll(function()
 	{
 		var Top = $(this).scrollTop();
@@ -112,6 +114,17 @@ var
 		}
 		if(CurrentPage == 'music')
 		{
+			Content.find('.music_page .music .audio .img_blur').css('top', parseFloat(Top/5)+'%');
+			if(Top < 5)
+			{
+				Content.find('.music_page .header .header_img_blur').css('backdrop-filter','blur(0px)');
+			}
+			else if(Top > 5)
+			{
+				Music_page_headerBlur = parseFloat(Top/30);
+				Content.find('.music_page .header .header_img_blur').css('backdrop-filter','blur(' + Music_page_headerBlur + 'px)');
+			}
+			//
 			Content.find('.music_page .header .scroll').css('height', (350 - Top) + 'px');
 			if(Top < 150)
 			{
@@ -122,7 +135,7 @@ var
 				Content.find('.music_page .header .Title').css('top', '150px');
 			}
 		}
-		if(Top > 150)
+		if(Top > 200)
 		{
 			if(user_scroll_current > Top)
 			{
@@ -220,8 +233,9 @@ function MobileMenu()
 	if(MobileMenuState == true)
 	{
 		$('.menu .mobile .mbutton i').text('menu');
-		$('.menu .mobile .mbutton').css('margin-left','0px');
+		//$('.menu .mobile .mbutton').css('margin-left','0px');
 		$('.menu .box').attr('mob','false');
+		$('.menu').attr('mob','false');
 		$('.blurBox').attr('state','false');
 		//$('html, body').css('overflow','unset');
 		MobileMenuState = false;
@@ -229,8 +243,9 @@ function MobileMenu()
 	else
 	{
 		$('.menu .mobile .mbutton i').text('close');
-		$('.menu .mobile .mbutton').css('margin-left','calc(100% - 60px)');
+		//$('.menu .mobile .mbutton').css('margin-left','calc(100% - 60px)');
 		$('.menu .box').attr('mob','true');
+		$('.menu').attr('mob','true');
 		$('.blurBox').attr('state','true');
 		//$('html, body').css('overflow','hidden');
 		MobileMenuState = true;
