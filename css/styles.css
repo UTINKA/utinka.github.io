@@ -10,8 +10,7 @@ html, body{
 	padding: 0;
     margin: 0;
     padding-bottom: 150px;
-	/*width: 100vw;
-    overflow-x: hidden;*/
+	width: 100%;
 	transition: 0.3s;
 }
 a{
@@ -237,6 +236,7 @@ a{
     width: calc(100% / 2 + 200px);
     height: 110vh;
     margin: 0 auto;
+	overflow: hidden;
 	transition:0.3s;
 }
 
