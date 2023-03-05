@@ -10,6 +10,8 @@ html, body{
 	padding: 0;
     margin: 0;
     padding-bottom: 150px;
+	/*width: 100vw;
+    overflow-x: hidden;*/
 	transition: 0.3s;
 }
 a{
