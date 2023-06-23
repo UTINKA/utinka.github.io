@@ -50,7 +50,7 @@ a{
     left: 0;
     right: 0;
     height: 60px;
-    width: calc(100% / 2 + 181px);
+    width: 100%;
     margin: 0 auto;
     transition: 0.3s;
 }
