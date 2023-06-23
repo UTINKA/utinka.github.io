@@ -12,6 +12,7 @@ html, body{
     padding-bottom: 150px;
 	width: 100%;
 	transition: 0.3s;
+	overflow-x: hidden;
 }
 a{
 	outline: 0;
