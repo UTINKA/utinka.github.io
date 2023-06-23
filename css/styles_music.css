@@ -58,7 +58,7 @@
 
 .content .music_page .music{
 	margin: 0 auto;
-    width: calc(100% / 2 + 200px);
+    width: calc(100% / 2 + 160px);
     padding: 50px 0;
 }
 .content .music_page .music hr{

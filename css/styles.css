@@ -235,7 +235,7 @@ a{
 .content{
 	position: relative;
     top: 100px;
-    width: calc(100% / 2 + 200px);
+    width: calc(100% / 2 + 160px);
     height: auto;
     margin: 0 auto;
 	overflow: hidden;
