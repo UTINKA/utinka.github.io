@@ -115,7 +115,7 @@ var
 		if(CurrentPage == 'music')
 		{
 			Content.find('.music_page .music .audio .img_blur').css('top', parseFloat(Top/5)+'%');
-			if(Top < 5)
+			/*if(Top < 5)
 			{
 				Content.find('.music_page .header .header_img_blur').css('backdrop-filter','blur(0px)');
 			}
@@ -123,7 +123,7 @@ var
 			{
 				Music_page_headerBlur = parseFloat(Top/30);
 				Content.find('.music_page .header .header_img_blur').css('backdrop-filter','blur(' + Music_page_headerBlur + 'px)');
-			}
+			}*/
 			//
 			Content.find('.music_page .header .scroll').css('height', (350 - Top) + 'px');
 			if(Top < 150)
